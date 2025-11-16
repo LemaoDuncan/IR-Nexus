@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>IR Nexus v3 — Elite Realistic</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>IR Nexus v3 — Elite Realistic</h1>
+    <p>High-volume, noisy logs for realistic SOC-style investigations.</p>
+
+    <div class="row">
+      <label>Scenario:</label>
+      <select id="scenario"></select>
+      <label>Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <button id="btnGenerate">Generate</button>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h3>Scenario Brief</h3>
+        <pre id="scenarioBrief" class="pane"></pre>
+        <h3>Playbook (Goals & Key Actions)</h3>
+        <pre id="scenarioPlaybook" class="pane"></pre>
+      </div>
+      <div class="col">
+        <h3>Timeline (summary)</h3>
+        <pre id="timeline" class="pane"></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h3>Logs</h3>
+        <input id="searchQ" placeholder="search logs (regex optional)"/>
+        <label><input type="checkbox" id="useRegex"/> regex</label>
+        <button id="searchBtn">Search</button>
+        <pre id="logs" class="pane"></pre>
+      </div>
+      <div class="col">
+        <h3>Packets</h3>
+        <pre id="packets" class="pane"></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h3>Forensic Artifacts</h3>
+        <button id="forensicsBtn">Load Forensics</button>
+        <pre id="forensics" class="pane"></pre>
+      </div>
+      <div class="col">
+        <h3>Your IR Plan</h3>
+        <textarea id="actions" class="pane" placeholder="Describe your actions: containment, eradication, recovery, reporting..."></textarea>
+        <input id="userId" placeholder="User id (optional)"/>
+        <button id="submitBtn">Submit for Scoring</button>
+        <pre id="feedback" class="pane"></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h3>Progress</h3>
+        <button id="progressBtn">Refresh Progress</button>
+        <pre id="progress" class="pane"></pre>
+      </div>
+      <div class="col">
+        <h3>Report</h3>
+        <button id="reportBtn">Generate Report</button>
+        <pre id="report" class="pane"></pre>
+      </div>
+    </div>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
